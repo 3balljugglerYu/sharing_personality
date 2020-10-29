@@ -1,24 +1,32 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column                | Type       | Options                 |
+| --------------------- | -------    | ----------------------- |
+| nickname              | string     | null: false             |
+| email                 | string     | null: false, default:"" |
+| password              | string     | null: false, default:"" |
 
-* Ruby version
+### Association
+- has_one :enneagram
 
-* System dependencies
 
-* Configuration
+## enneagram テーブル
 
-* Database creation
+| Column                | Type       | Options           |
+| --------------------- | ---------- | ----------------- |
+| user                  | references | foreign_key: true |
+| type_result_id        | integer    |                   |
+| perfectionist_sum     | integer    |                   |
+| giver_sum             | integer    |                   |
+| achiever_sum          | integer    |                   |
+| individualist_sum     | integer    |                   |
+| investigator_sum      | integer    |                   |
+| skeptic_sum           | integer    |                   |
+| enthusiast_sum        | integer    |                   |
+| challenger_sum        | integer    |                   |
+| peacemaker_sum        | integer    |                   |
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :users
