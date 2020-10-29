@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_075236) do
+ActiveRecord::Schema.define(version: 2020_10_29_084113) do
+
+  create_table "enneagrams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "type_result_id"
+    t.integer "perfectionist_sum"
+    t.integer "giver_sum"
+    t.integer "achiever_sum"
+    t.integer "individualist_sum"
+    t.integer "investigator_sum"
+    t.integer "skeptic_sum"
+    t.integer "enthusiast_sum"
+    t.integer "challenger_sum"
+    t.integer "peacemaker_sum"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_enneagrams_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -25,4 +42,5 @@ ActiveRecord::Schema.define(version: 2020_10_29_075236) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "enneagrams", "users"
 end
