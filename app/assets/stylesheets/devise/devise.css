@@ -1,0 +1,113 @@
+.entire{
+  height: 100vh;
+  background-color: rgb(62, 62, 62);
+}
+.main{
+  height: calc(100vh - 100px);
+  background-color: #fff;
+  position: relative;
+  top: 50px;
+}
+
+.main-entire{
+  height: calc(100vh - 100px);
+  display: flex;
+}
+
+.left{
+  margin: auto 0 auto 50px;
+}
+
+.devise-title{
+  color:rgb(170, 84, 84);
+  font-size: 40px;
+  padding-left: 100px;
+  padding-bottom: 30px;
+}
+
+.input-session{
+  font-size: 20px;
+  color: rgb(112, 112, 112);
+  border-color: rgb(230, 230, 230);
+  border-radius: 10px;
+  background-color: rgb(255, 247, 247);
+  text-overflow: ellipsis;
+  width: 500px;
+  height: 80px;
+  margin: 20px 0 20px 100px;
+  padding-left: 10px;
+}
+
+.input-registration{
+  font-size: 20px;
+  color: rgb(112, 112, 112);
+  border-color: rgb(230, 230, 230);
+  border-radius: 10px;
+  background-color: rgb(255, 247, 247);
+  text-overflow: ellipsis;
+  width: 500px;
+  height: 80px;
+  margin: 10px 0 10px 100px;
+  padding-left: 10px;
+}
+
+.devise-btn{
+  color: white;
+  font-size: 20px;
+  margin: 20px 0 20px 100px;
+  width: 500px;
+  height: 80px;
+  background-color: rgb(170, 84, 84);
+  border-radius: 10px;
+  border-color: rgb(207, 207, 207);
+  cursor: pointer;
+}
+
+.devise-links{
+  margin: 0 100px;
+}
+
+.devise-link{
+  padding: 0 10px;
+}
+
+.devise-text{
+  text-decoration: none;
+  color: rgb(170, 84, 84);
+  font-size: 20px;
+}
+
+.devise-errors{
+  margin-left: 100px;
+  color: rgb(165, 25, 25);
+}
+
+.right{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+.image-logo{
+  margin: auto 0;
+}
+
+.image-logo img{
+  width: 700px;
+}
+
+.explanation{
+  position: absolute;
+  font-size: 30px;
+  padding-top: 22vh;
+  padding-left: 3vw;
+  top: 0px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.attention{
+  color: rgb(219, 0, 0);
+  font-size: 50px;
+}
+
