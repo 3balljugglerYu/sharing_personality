@@ -1,3 +1,9 @@
 <h1>ここはエニアグラムのindexページです。</h1>
 
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+<div class="devise-logout">
+  <span><%= current_user.nickname %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+  </span>
+</div>
+
+
