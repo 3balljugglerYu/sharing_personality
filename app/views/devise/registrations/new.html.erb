@@ -1,49 +1,43 @@
 <%= form_with model: @user, url: user_registration_path, class: "registration", local: true do |f| %>
   <div class="entire">
+    <div class="bottom-bar"></div>
     <div class="main">
-      <div class="main-entire">
-        <div class="left">
-          <h1 class="devise-title">新規登録</h1>
-          <div class="devise-errors">
-            <%= render "devise/shared/error_messages", model: f.object %>
-          </div>
-          <div>
-            <div>
-              <%= f.text_field :nickname, class:"input-registration", id:"nickname", placeholder:"ニックネーム", maxlength:"20", autofocus: true %>
-            </div>
-            <div>
-              <%= f.email_field :email, class:"input-registration", id:"email", placeholder:"メールアドレス" %>
-            </div>
-            <div>
-              <%= f.password_field :password, class:"input-registration", id:"password", placeholder:"パスワード 6文字以上の半角数字" %>
-            </div>
-            <div>
-              <%= f.password_field :password_confirmation, class:"input-registration", id:"password_confirmation", placeholder:"同じパスワードを入力してください" %>
-            </div>
-            <div>
-              <%= f.submit "新規登録", class:"devise-btn" %>
-            </div>
-          </div>
-          <div class="devise-links">
-            <div class="devise-link">
-              <%= link_to "ログインはこちらです。", new_session_path(resource_name), class:'devise-text' %><br />
-            </div>
-          </div>
+      <div class="left">
+        <h1 class="registration-title">新規登録</h1>
+        <div class="devise-errors">
+          <%= render "devise/shared/error_messages", model: f.object %>
         </div>
-        <div class="right">
-          <div class="image-logo">
-            <%= image_tag 'enneagram_logo.png' %>
-            <div class="explanation">
-              <p>このサイトでは<br>
-              <span class="attention">エニアグラム</span>という<br>
-              性格分析を行うことができます。<br><br>
-              <span class="attention">9つのタイプ</span>に分け、<br>
-              自分自身のタイプを知ることがきると共に、<br>
-              従業員と性格分析を共有することができます。</p>
-            </div>
-          </div>
+        <div>
+          <%= f.text_field :nickname, class:"input-registration", id:"nickname", placeholder:"ニックネーム", maxlength:"20", autofocus: true %>
+        </div>
+        <div>
+          <%= f.email_field :email, class:"input-registration", id:"email", placeholder:"メールアドレス" %>
+        </div>
+        <div>
+          <%= f.password_field :password, class:"input-registration", id:"password", placeholder:"パスワード 6文字以上の半角数字" %>
+        </div>
+        <div>
+          <%= f.password_field :password_confirmation, class:"input-registration", id:"password_confirmation", placeholder:"同じパスワードを入力してください" %>
+        </div>
+        <div>
+          <%= f.submit "新規登録", class:"devise-btn" %>
+        </div>
+        <div class="devise-links">
+          <%= link_to "ログインはこちらです。", new_session_path(resource_name), class:'devise-text' %><br />
+        </div>
+      </div>
+      <div class="right">
+        <%= image_tag 'enneagram (2).png' ,class:"image-logo" %>
+        <div class="explanation">
+          <p>このサイトでは<br>
+          <span class="attention">「エニアグラム」</span>という<br>
+          性格分析を行うことができます。<br><br>
+          9つのタイプに分け、<br>
+          <span class="attention-second">自分自身を知る</span>ことができ、<br>
+          <span class="attention-second">性格分析を共有する</span>ことができます。</p>
         </div>
       </div>
     </div>
+    <div class="bottom-bar"></div>
   </div>
 <% end %>
