@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_10_29_084113) do
 
   create_table "enneagrams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "type_result_id"
+    t.integer "result_id"
     t.integer "perfectionist_sum"
     t.integer "giver_sum"
     t.integer "achiever_sum"
