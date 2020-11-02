@@ -1,4 +1,4 @@
-class TypeResult < ActiveHash::Base
+class Result < ActiveHash::Base
   self.data = [
     { id: 1,name: '--'},
     { id: 2,name:'完璧主義者'},

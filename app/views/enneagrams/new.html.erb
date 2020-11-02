@@ -1,1 +1,41 @@
-性格診断のページです。
+<div class="all">
+  <%= render "shared/header"%>
+  <div class="title">
+    <h1>エニアグラム診断</h1>
+  </div>
+  <div class="explanation-new">
+    <p>当てはまるものだけにチェックをしてください。質問文をクリックしてもチェックされます。</p>
+  </div>
+  <div class="questions">
+    <%= render "question" %>
+      <div class="enneagram-sum">
+        <%= form_with model: @enneagram, class:'result',local: true do |form| %>
+          <div class="enneagram_types">
+          <div class="enneagram_type">完璧主義者のポイントは
+          <%= form.text_field "perfectionist_sum", class:"count_num", id:"sum_one" ,readonly: true %> pt!</div>
+          <div class="enneagram_type">献身家のポイントは
+          <%= form.text_field "giver_sum", class:"count_num", id:"sum_two" ,readonly: true %> pt!</div>
+          <div class="enneagram_type">達成者のポイントは
+          <%= form.text_field "achiever_sum", class:"count_num", id:"sum_three" ,readonly: true %> pt!</div>
+          <div class="enneagram_type">芸術家のポイントは
+          <%= form.text_field "individualist_sum", class:"count_num", id:"sum_four" ,readonly: true %> pt!</div>
+          <div class="enneagram_type">研究者のポイントは
+          <%= form.text_field "investigator_sum", class:"count_num", id:"sum_five" ,readonly: true %> pt!</div>
+          <div class="enneagram_type">堅実家のポイントは
+          <%= form.text_field "skeptic_sum", class:"count_num", id:"sum_six" ,readonly: true %> pt!</div>
+          <div class="enneagram_type">楽天家のポイントは
+          <%= form.text_field "enthusiast_sum", class:"count_num", id:"sum_seven" ,readonly: true %> pt!</div>
+          <div class="enneagram_type">統率者のポイントは
+          <%= form.text_field "challenger_sum", class:"count_num", id:"sum_eight" ,readonly: true %> pt!</div>
+          <div class="enneagram_type">調停者のポイントは
+          <%= form.text_field "peacemaker_sum", class:"count_num", id:"sum_nine" ,readonly: true %> pt!</div>
+          </div>
+          一番高いポイントがあなたのタイプです！タイプを選び、決定しくてださい。
+          <div class="decision">
+          <%= form.collection_select(:result_id, Result.all, :id, :name, {}, {class: "type_select"}) %> <br>
+          <%= form.submit "決定", class:"result-btn"%></div>
+        <% end %>
+      </div>
+  </div>
+  <div class="bar"></div>
+</div>
