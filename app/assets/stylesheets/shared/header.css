@@ -1,0 +1,30 @@
+.top-bar{
+  display: flex;
+  height: 50px;
+  background-color: rgb(62, 62, 62);
+}
+
+.top-bar-title{
+  display: flex;
+  width: 300px;
+}
+
+.top-bar-title a{
+  margin: auto;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+
+.top-ba-btn{
+  width: calc(100% - 300px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 100px;
+}
+
+  .top-ba-btn a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.976);
+  }

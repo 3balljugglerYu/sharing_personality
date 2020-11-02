@@ -1,0 +1,115 @@
+
+.all{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+  .title {
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .title h1 {
+    font-size: 70px;
+    color: rgb(129, 109, 109);
+  }
+
+.explanation-new{
+  margin-top: 20px;
+  font-size: 25px;
+  color: rgb(129, 109, 109);
+}
+
+.questions {
+  margin: 30px auto;
+}
+
+.question{
+  display: flex;
+  height: 50px;
+  width: 900px;
+  cursor: pointer;
+}
+
+.question p {
+  justify-content: center;
+  margin-left: 10px;
+  color: rgb(133, 133, 133);
+}
+
+.checks{
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.checks label {
+  background-color: rgb(255, 255, 255);
+  border-bottom: solid 4px rgb(233, 233, 233);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question input{
+  width: 30px;
+  height: 30px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.sum-btn button{
+  height: 80px;
+  width: 200px;
+  font-size: 30px;
+  color: rgb(129, 109, 109);
+  margin: 20px 0 ;
+  cursor: pointer;
+}
+
+.enneagram_types{
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  margin-right: 300px;
+  color: rgb(129, 109, 109);
+}
+
+.enneagram_type{
+  padding-bottom: 20px;
+}
+
+.count_num{
+  width: 100px;
+  text-align: center;
+}
+
+.type_select{
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  padding-left: 10px;
+  color: rgb(129, 109, 109);
+
+}
+
+.decision{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+.result-btn{
+  width: 100px;
+  margin-left: 20px;
+  font-size: 30px;
+  color: rgb(129, 109, 109);
+}
+
+

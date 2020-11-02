@@ -1,6 +1,6 @@
 <%= form_with model: @user, url: user_registration_path, class: "registration", local: true do |f| %>
   <div class="entire">
-    <div class="bottom-bar"></div>
+    <div class="bar"></div>
     <div class="main">
       <div class="left">
         <h1 class="registration-title">新規登録</h1>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="right">
-        <%= image_tag 'enneagram (2).png' ,class:"image-logo" %>
+        <%= image_tag 'enneagram.png' ,class:"image-logo" %>
         <div class="explanation">
           <p>このサイトでは<br>
           <span class="attention">「エニアグラム」</span>という<br>
@@ -38,6 +38,6 @@
         </div>
       </div>
     </div>
-    <div class="bottom-bar"></div>
+    <div class="bar"></div>
   </div>
 <% end %>
