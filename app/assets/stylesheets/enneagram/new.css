@@ -25,6 +25,11 @@
   color: rgb(129, 109, 109);
 }
 
+.start{
+  padding: 100px 0px;
+  font-size: 70px;
+}
+
 .questions {
   margin: 30px auto;
 }
@@ -112,4 +117,6 @@
   color: rgb(129, 109, 109);
 }
 
-
+.field_with_errors {
+  display: contents;
+}
