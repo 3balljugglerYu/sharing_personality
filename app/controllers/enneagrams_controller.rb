@@ -30,8 +30,9 @@ class EnneagramsController < ApplicationController
   end
 
   def move_to_index
-    @enneagram_user = Enneagram.find(current_user.id)
-    return redirect_to root_path if @enneagram_user != nil
+    # @enneagram_user = Enneagram.find(current_user.id)
+    # return redirect_to root_path if @enneagram_user != nil
+
   end
 
 

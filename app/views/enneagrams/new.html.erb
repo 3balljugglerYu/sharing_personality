@@ -4,10 +4,6 @@
   <div class="title">
     <h1>エニアグラム診断</h1>
   </div>
-  <div class="explanation-a">
-    <p>
-    </p>
-  </div>
   <div class="explanation-new">
     <p>これから性格診断を開始します！質問数は90問、目安時間は8分程度です。<br><br>
     大変だとは思いますが、自分の性格を知るために必要なことですので頑張ってくださね！<br><br>
@@ -20,6 +16,7 @@
     <%= render "question" %>
       <div class="enneagram-sum" >
         <%= form_with model: @enneagram, class:'result',local: true do |form| %>
+          <%= render 'shared/error_messages', model: form.object %>
           <div class="enneagram_types">
             <div class="enneagram_type">完璧主義者のポイントは
               <%= form.text_field "perfectionist_sum", class:"count_num", id:"sum_one" ,readonly: true %> pt!
