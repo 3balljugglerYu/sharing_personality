@@ -31,16 +31,6 @@ describe Enneagram do
         @enneagram.valid?
         expect(@enneagram.errors.full_messages).to include("Result Error　自分自身のタイプを選んで下さい")
       end
-      it 'カウントの数が11以上の数字が入力された場合' do
-        @enneagram.perfectionist_sum  = 11
-        @enneagram.valid?
-        expect(@enneagram.errors.full_messages).to include("Perfectionist sum 文字もしくは11以上の数値が入力されています")
-      end
-      it 'カウントの数に文字が入力された場合' do
-        @enneagram.perfectionist_sum  = 'あ'
-        @enneagram.valid?
-        expect(@enneagram.errors.full_messages).to include("Perfectionist sum 文字もしくは11以上の数値が入力されています")
-      end
     end
   end
 end
