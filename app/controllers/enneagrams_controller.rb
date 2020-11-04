@@ -1,6 +1,7 @@
 class EnneagramsController < ApplicationController
   before_action :move_to_session
   before_action :move_to_index, only: [:new]
+  before_action :move_to_new, only: [:index]
 
   def index
     @enneagrams = Enneagram.all
@@ -26,6 +27,11 @@ class EnneagramsController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path
     end
+  end
+
+  def move_to_new
+    @enneagram_user = Enneagram.find_by(user_id: current_user.id)
+    return redirect_to new_enneagram_path if @enneagram_user == nil
   end
 
   def move_to_index
