@@ -29,17 +29,4 @@ class Enneagram < ApplicationRecord
     validates :peacemaker_sum
   end
 
-  with_options numericality: { less_than_or_equal_to: 10, message: '文字もしくは11以上の数値が入力されています' } do
-    validates :perfectionist_sum
-    validates :giver_sum
-    validates :achiever_sum
-    validates :individualist_sum
-    validates :investigator_sum
-    validates :skeptic_sum
-    validates :enthusiast_sum
-    validates :challenger_sum
-    validates :peacemaker_sum
-  end
-
-
 end
