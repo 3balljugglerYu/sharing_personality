@@ -1,0 +1,93 @@
+.center{
+  height: calc(100% - 50px - 5%);
+  display: flex;
+  overflow: scroll;
+}
+.side{
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.side-top{
+  height: 200px;
+  border: solid 2px rgb(211, 178, 178);
+}
+
+.current-user-name{
+  font-size: 20px;
+  padding: 10px 0px;
+}
+
+.type-title{
+  font-size: 20px;
+}
+
+.current-user-type{
+  font-size: 30px;
+  padding: 10px;
+  margin: 0 10px 10px 10px;
+}
+
+.user-info{
+  padding: 10px 0;
+}
+.side-bottom{
+  height: calc(100% - 200px);
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  border: solid 2px rgb(211, 178, 178);
+}
+
+.main-right{
+  width: calc(100% - 250px);
+  background-color: rgb(255, 255, 255);
+  padding: 5px 20px;
+}
+
+.main-title{
+  height: 10%;
+  color: rgb(85, 0, 0);
+  text-align: center;
+  font-size: 5vh;
+  overflow: hidden;
+}
+
+.sub-title{
+  color: rgb(122, 92, 92);
+  border-bottom: solid 2px rgb(211, 178, 178);
+  font-size: 3vh;
+  overflow: hidden;
+  text-align: left;
+}
+
+.sub-explanation{
+  font-size: 2.5vh;
+  color: rgb(70, 70, 70);
+  text-align: left;
+}
+
+.important{
+  height: 15%;
+  overflow: hidden;
+}
+
+.good-points{
+  height: 25%;
+  overflow: hidden;
+  padding-top: 15px;
+}
+
+.bad-points{
+  height: 35%;
+  overflow: hidden;
+  padding-top: 15px;
+}
+
+.learning-type{
+  height: 15%;
+  overflow: hidden;
+}
