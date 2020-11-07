@@ -15,10 +15,13 @@
           </div>
         </div>
         <div class="side-bottom">
+          <div class="user-title">
+            <p>ユーザーリスト</p>
+          </div>
           <% @enneagrams.where.not(user_id: current_user.id).each do |enneagram| %>
-            <div class="user-info">
-              <%= enneagram.user.nickname %>
-              (<%= enneagram.result.name %>)
+            <div class="users-info">
+              <%= link_to enneagram.user.nickname , user_path(enneagram.user.id), class:"user-info" %>
+              (<%= link_to enneagram.result.name , user_path(enneagram.user.id), class:"user-info" %>)
             </div>
           <% end %>
         </div>

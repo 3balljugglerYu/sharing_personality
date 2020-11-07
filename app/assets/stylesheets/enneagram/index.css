@@ -29,8 +29,20 @@
   margin: 0 10px 10px 10px;
 }
 
-.user-info{
+.user-title{
+  width: 100%;
+  text-align: center;
+  background-color: rgb(248, 239, 239);
+}
+
+.users-info{
   padding: 10px 0;
+  color: rgb(179, 45, 45);
+}
+
+.user-info{
+  text-decoration: none;
+  color: rgb(179, 45, 45);
 }
 .side-bottom{
   height: calc(100% - 200px);
