@@ -7,9 +7,9 @@ class Enneagram < ApplicationRecord
 
   def all_count
     if perfectionist_sum == 0 && giver_sum == 0 && giver_sum == 0 && achiever_sum == 0 &&
-      individualist_sum == 0 && investigator_sum == 0 && skeptic_sum == 0 &&
-      enthusiast_sum == 0 && challenger_sum == 0 && peacemaker_sum == 0
-      errors.add(:base, "全ての値が０です")
+       individualist_sum == 0 && investigator_sum == 0 && skeptic_sum == 0 &&
+       enthusiast_sum == 0 && challenger_sum == 0 && peacemaker_sum == 0
+      errors.add(:base, '全ての値が０です')
     end
   end
 
@@ -28,5 +28,4 @@ class Enneagram < ApplicationRecord
     validates :challenger_sum
     validates :peacemaker_sum
   end
-
 end

@@ -71,4 +71,3 @@ describe User do
     end
   end
 end
-
