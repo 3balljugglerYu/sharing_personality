@@ -8,6 +8,10 @@
   background-color: rgb(255, 255, 255);
   text-align: center;
 }
+.side-tops{
+  text-decoration: none;
+  color: rgb(139, 27, 27);
+}
 
 .side-top{
   height: 200px;
@@ -15,8 +19,8 @@
 }
 
 .current-user-name{
-  font-size: 20px;
-  padding: 10px 0px;
+  font-size: 108%;
+  padding: 15px 0px;
 }
 
 .type-title{
@@ -25,12 +29,27 @@
 
 .current-user-type{
   font-size: 30px;
-  padding: 10px;
+  padding: 0 0 10px 0;
   margin: 0 10px 10px 10px;
 }
 
-.user-info{
+.index-logout{
+  color: rgb(139, 27, 27);
+}
+.user-title{
+  width: 100%;
+  text-align: center;
+  background-color: rgb(248, 239, 239);
+}
+
+.users-info{
   padding: 10px 0;
+  color: rgb(179, 45, 45);
+}
+
+.user-info{
+  text-decoration: none;
+  color: rgb(179, 45, 45);
 }
 .side-bottom{
   height: calc(100% - 200px);
@@ -40,6 +59,7 @@
   flex-direction: column;
   align-items: end;
   border: solid 2px rgb(211, 178, 178);
+  overflow: scroll;
 }
 
 .main-right{
@@ -56,38 +76,23 @@
   overflow: hidden;
 }
 
+.sub-titles{
+  height: 90%;
+  overflow: scroll;
+}
+
 .sub-title{
   color: rgb(122, 92, 92);
   border-bottom: solid 2px rgb(211, 178, 178);
   font-size: 3vh;
   overflow: hidden;
   text-align: left;
+  margin: 15px 0;
 }
 
 .sub-explanation{
   font-size: 2.5vh;
   color: rgb(70, 70, 70);
   text-align: left;
-}
-
-.important{
-  height: 15%;
-  overflow: hidden;
-}
-
-.good-points{
-  height: 25%;
-  overflow: hidden;
-  padding-top: 15px;
-}
-
-.bad-points{
-  height: 35%;
-  overflow: hidden;
-  padding-top: 15px;
-}
-
-.learning-type{
-  height: 15%;
-  overflow: hidden;
+  margin-bottom: 30px;
 }

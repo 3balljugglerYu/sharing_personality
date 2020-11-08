@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise  :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
 
-  has_one :enneagram
+  has_one :enneagram, dependent: :destroy
 
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers' }
   validates :nickname, presence: true

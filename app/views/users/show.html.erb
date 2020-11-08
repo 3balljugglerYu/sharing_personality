@@ -30,29 +30,30 @@
       </div>
       <div class="main-right">
         <div class="main-title">
-          <%= current_user.nickname %>さん
-          (<%= current_user.enneagram.result.name %>)の性格
+          <%= @user.nickname %>さん
+          (<%= @user.enneagram.result.name %>)の性格
         </div>
         <div class="sub-titles">
-          <div class="sub-title">大切にしている事</div>
+          <div class="sub-title">大切だと思っていること</div>
           <div class="sub-explanation">
-            <%= current_user.enneagram.result.important %>
+            <%= @user.enneagram.result.important %>
           </div>
-          <div class="sub-title">長所</div>
+          <div class="sub-title">苦手だと思っていること</div>
           <div class="sub-explanation">
-            ・<%= current_user.enneagram.result.good1 %><br>
-            ・<%= current_user.enneagram.result.good2 %><br>
-            ・<%= current_user.enneagram.result.good3 %>
+            ・<%= @user.enneagram.result.stop1 %><br>
+            ・<%= @user.enneagram.result.stop2 %><br>
+            ・<%= @user.enneagram.result.stop3 %>
           </div>
-          <div class="sub-title">短所</div>
+          <div class="sub-title">モチベーションを維持または上げる際のポイント</div>
           <div class="sub-explanation">
-            ・<%= current_user.enneagram.result.bad1 %><br>
-            ・<%= current_user.enneagram.result.bad2 %><br>
-            ・<%= current_user.enneagram.result.bad3 %>
+            ・<%= @user.enneagram.result.motivation1 %><br>
+            ・<%= @user.enneagram.result.motivation2 %><br>
+            ・<%= @user.enneagram.result.motivation3 %>
           </div>
-          <div class="sub-title">学ぶべきタイプ</div>
+          <div class="sub-title">アドバイスする際の注意点</div>
           <div class="sub-explanation">
-            <%= current_user.enneagram.result.learn1 %>
+            ・<%= @user.enneagram.result.advice1 %><br>
+            ・<%= @user.enneagram.result.advice2 %>
           </div>
         </div>
       </div>
