@@ -1,33 +1,7 @@
 <div class="entire">
   <%= render "shared/header"%>
     <div class="center">
-      <div class="side">
-        <div class="side-top">
-          <%= link_to root_path ,class:"side-tops" do %>
-            <div class="current-user-name">
-              <%= current_user.nickname %><span>さん</span>
-            </div>
-            <div class="type-title">タイプ</div>
-            <div class="current-user-type">
-              <%= current_user.enneagram.result.name %>
-            </div>
-          <% end %>
-          <div class="devise-logout">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "index-logout" %>
-          </div>
-        </div>
-        <div class="side-bottom">
-          <div class="user-title">
-            <p>ユーザーリスト</p>
-          </div>
-          <% @enneagrams.where.not(user_id: current_user.id).each do |enneagram| %>
-            <div class="users-info">
-              <%= link_to enneagram.user.nickname , user_path(enneagram.user.id), class:"user-info" %>
-              (<%= link_to enneagram.result.name , user_path(enneagram.user.id), class:"user-info" %>)
-            </div>
-          <% end %>
-        </div>
-      </div>
+    <%= render "shared/side_bar"%>
       <div class="main-right">
         <div class="main-title">
           <%= @user.nickname %>さん
