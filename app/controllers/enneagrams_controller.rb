@@ -24,19 +24,17 @@ class EnneagramsController < ApplicationController
   private
 
   def move_to_session
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
   def move_to_new
     @enneagram_user = Enneagram.find_by(user_id: current_user.id)
-    return redirect_to new_enneagram_path if @enneagram_user == nil
+    return redirect_to new_enneagram_path if @enneagram_user.nil?
   end
 
   def move_to_index
     @enneagram_user = Enneagram.find_by(user_id: current_user.id)
-    return redirect_to root_path if @enneagram_user != nil
+    return redirect_to root_path unless @enneagram_user.nil?
   end
 
   def enneagram_params

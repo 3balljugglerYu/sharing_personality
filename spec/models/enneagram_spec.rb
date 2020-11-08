@@ -24,12 +24,12 @@ describe Enneagram do
         @enneagram.challenger_sum     = 0
         @enneagram.peacemaker_sum     = 0
         @enneagram.valid?
-        expect(@enneagram.errors.full_messages).to include("全ての値が０です")
+        expect(@enneagram.errors.full_messages).to include('全ての値が０です')
       end
       it '自身のタイプを選択していない時' do
         @enneagram.result_id = 1
         @enneagram.valid?
-        expect(@enneagram.errors.full_messages).to include("Result Error　自分自身のタイプを選んで下さい")
+        expect(@enneagram.errors.full_messages).to include('Result Error　自分自身のタイプを選んで下さい')
       end
     end
   end

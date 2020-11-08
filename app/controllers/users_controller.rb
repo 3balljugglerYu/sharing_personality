@@ -9,6 +9,6 @@ class UsersController < ApplicationController
 
   def move_to_new
     @enneagram_user = Enneagram.find_by(user_id: params[:id])
-    return redirect_to root_path if @enneagram_user == nil
+    return redirect_to root_path if @enneagram_user.nil?
   end
 end
