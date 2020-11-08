@@ -3,13 +3,15 @@
     <div class="center">
       <div class="side">
         <div class="side-top">
-          <div class="current-user-name">
-            <%= current_user.nickname %><span>さん</span>
-          </div>
-          <div class="type-title">タイプ</div>
-          <div class="current-user-type">
-            <%= current_user.enneagram.result.name %>
-          </div>
+          <%= link_to root_path ,class:"side-tops" do %>
+            <div class="current-user-name">
+              <%= current_user.nickname %><span>さん</span>
+            </div>
+            <div class="type-title">タイプ</div>
+            <div class="current-user-type">
+              <%= current_user.enneagram.result.name %>
+            </div>
+          <% end %>
           <div class="devise-logout">
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "index-logout" %>
           </div>
@@ -28,31 +30,26 @@
       </div>
       <div class="main-right">
         <div class="main-title">
-          <%= current_user.enneagram.result.name %>の性格
+          <%= current_user.nickname %>さん
+          (<%= current_user.enneagram.result.name %>)の性格
         </div>
-        <div class="important">
+        <div class="sub-titles">
           <div class="sub-title">大切にしている事</div>
           <div class="sub-explanation">
             <%= current_user.enneagram.result.important %>
           </div>
-        </div>
-        <div class="good-points">
           <div class="sub-title">長所</div>
           <div class="sub-explanation">
             ・<%= current_user.enneagram.result.good1 %><br>
             ・<%= current_user.enneagram.result.good2 %><br>
             ・<%= current_user.enneagram.result.good3 %>
           </div>
-        </div>
-        <div class="bad-points">
           <div class="sub-title">短所</div>
           <div class="sub-explanation">
             ・<%= current_user.enneagram.result.bad1 %><br>
             ・<%= current_user.enneagram.result.bad2 %><br>
             ・<%= current_user.enneagram.result.bad3 %>
           </div>
-        </div>
-        <div class="learning-type">
           <div class="sub-title">学ぶべきタイプ</div>
           <div class="sub-explanation">
             <%= current_user.enneagram.result.learn1 %>

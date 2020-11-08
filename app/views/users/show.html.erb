@@ -1,2 +1,62 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="entire">
+  <%= render "shared/header"%>
+    <div class="center">
+      <div class="side">
+        <div class="side-top">
+          <%= link_to root_path ,class:"side-tops" do %>
+            <div class="current-user-name">
+              <%= current_user.nickname %><span>さん</span>
+            </div>
+            <div class="type-title">タイプ</div>
+            <div class="current-user-type">
+              <%= current_user.enneagram.result.name %>
+            </div>
+          <% end %>
+          <div class="devise-logout">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "index-logout" %>
+          </div>
+        </div>
+        <div class="side-bottom">
+          <div class="user-title">
+            <p>ユーザーリスト</p>
+          </div>
+          <% @enneagrams.where.not(user_id: current_user.id).each do |enneagram| %>
+            <div class="users-info">
+              <%= link_to enneagram.user.nickname , user_path(enneagram.user.id), class:"user-info" %>
+              (<%= link_to enneagram.result.name , user_path(enneagram.user.id), class:"user-info" %>)
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="main-right">
+        <div class="main-title">
+          <%= @user.nickname %>さん
+          (<%= @user.enneagram.result.name %>)の性格
+        </div>
+        <div class="sub-titles">
+          <div class="sub-title">大切だと思っていること</div>
+          <div class="sub-explanation">
+            <%= @user.enneagram.result.important %>
+          </div>
+          <div class="sub-title">苦手だと思っていること</div>
+          <div class="sub-explanation">
+            ・<%= @user.enneagram.result.stop1 %><br>
+            ・<%= @user.enneagram.result.stop2 %><br>
+            ・<%= @user.enneagram.result.stop3 %>
+          </div>
+          <div class="sub-title">モチベーションを維持または上げる際のポイント</div>
+          <div class="sub-explanation">
+            ・<%= @user.enneagram.result.motivation1 %><br>
+            ・<%= @user.enneagram.result.motivation2 %><br>
+            ・<%= @user.enneagram.result.motivation3 %>
+          </div>
+          <div class="sub-title">アドバイスする際の注意点</div>
+          <div class="sub-explanation">
+            ・<%= @user.enneagram.result.advice1 %><br>
+            ・<%= @user.enneagram.result.advice2 %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="bar"></div>
+</div>
