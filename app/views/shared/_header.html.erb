@@ -3,6 +3,6 @@
     <%= link_to "sharing_personality", "/" %>
   </div>
   <div class="top-ba-btn">
-    <p> <%= link_to "もう一度診断する", edit_enneagram_path(@enneagrams.find_by(user_id: current_user.id)) %> </p>
+    <p> <%= link_to "もう一度診断する", edit_enneagram_path(@enneagram_user) %> </p>
   </div>
 </div>

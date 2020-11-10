@@ -15,8 +15,7 @@ class EnneagramsController < ApplicationController
 
   def create
     @enneagram = Enneagram.new(enneagram_params)
-    if @enneagram.valid?
-      @enneagram.save
+    if @enneagram.save
       redirect_to root_path
     else
       render :new
