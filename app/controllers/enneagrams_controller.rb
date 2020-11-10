@@ -1,13 +1,15 @@
 class EnneagramsController < ApplicationController
   before_action :move_to_session
-  before_action :move_to_index, only: [:new]
-  before_action :move_to_new, only: [:index]
+  before_action :set_current_user, only: [:index, :new]
+  before_action :set_enneagram, only:[:edit, :update]
 
   def index
+    return redirect_to new_enneagram_path if @enneagram_user.nil?
     @enneagrams = Enneagram.all
   end
 
   def new
+    return redirect_to root_path unless @enneagram_user.nil?
     @enneagram = Enneagram.new
   end
 
@@ -21,20 +23,29 @@ class EnneagramsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @enneagram.update(enneagram_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def move_to_session
     redirect_to new_user_session_path unless user_signed_in?
   end
 
-  def move_to_new
+  def set_current_user
     @enneagram_user = Enneagram.find_by(user_id: current_user.id)
-    return redirect_to new_enneagram_path if @enneagram_user.nil?
   end
 
-  def move_to_index
-    @enneagram_user = Enneagram.find_by(user_id: current_user.id)
-    return redirect_to root_path unless @enneagram_user.nil?
+  def set_enneagram
+    @enneagram = Enneagram.find(params[:id])
   end
 
   def enneagram_params
