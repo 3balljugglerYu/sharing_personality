@@ -1,5 +1,5 @@
 class EnneagramsController < ApplicationController
-  before_action :move_to_session
+  before_action :move_to_session, except: [:about]
   before_action :set_current_user, only: [:index, :new]
   before_action :set_enneagram, only:[:edit, :update]
 
@@ -33,10 +33,14 @@ class EnneagramsController < ApplicationController
     end
   end
 
+  def about
+    @user = User.new
+  end
+
   private
 
   def move_to_session
-    redirect_to new_user_session_path unless user_signed_in?
+    redirect_to enneagrams_about_path unless user_signed_in?
   end
 
   def set_current_user
