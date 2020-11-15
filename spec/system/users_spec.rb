@@ -8,9 +8,9 @@ RSpec.describe 'ユーザー新規登録', type: :system do
     it '正しい情報を入力すればユーザー新規登録ができ、enneagram/newに移動する' do
       # トップページに移動しようするとログイン画面に遷移
       visit root_path
-      expect(page).to have_content('新規登録はこちらです。')
+      expect(page).to have_content('性格分析を従業員同士で共有することができます')
       # 新規登録ページに遷移
-      click_on '新規登録はこちらです。'
+      click_on '新規登録'
       # ユーザー情報を入力
       fill_in 'ニックネーム', with: @user.nickname
       fill_in 'メールアドレス', with: @user.email
@@ -28,9 +28,9 @@ RSpec.describe 'ユーザー新規登録', type: :system do
     it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
       # トップページに移動しようするとログイン画面に遷移
       visit root_path
-      expect(page).to have_content('新規登録はこちらです。')
+      expect(page).to have_content('性格分析を従業員同士で共有することができます')
       # 新規登録ページに遷移
-      click_on '新規登録はこちらです。'
+      click_on '新規登録'
       # 新規登録ページへ移動しユーザー情報を入力
       fill_in 'ニックネーム', with: ''
       fill_in 'メールアドレス', with: ''
@@ -53,7 +53,9 @@ RSpec.describe 'ログイン', type: :system do
     it '保存されているユーザーの情報と合致すればログインができる' do
       # トップページに移動しようするとログイン画面に遷移
       visit root_path
-      expect(page).to have_content('新規登録はこちらです。')
+      expect(page).to have_content('性格分析を従業員同士で共有することができます')
+      # ログインページに遷移
+      click_on 'ログイン'
       # ログインするための入力を実行
       fill_in 'メールアドレス', with: @user.email
       fill_in 'パスワード', with: @user.password
@@ -66,7 +68,9 @@ RSpec.describe 'ログイン', type: :system do
     it '保存されているユーザーの情報と合致しないとログインができない' do
       # トップページに移動しようするとログイン画面に遷移
       visit root_path
-      expect(page).to have_content('新規登録はこちらです。')
+      expect(page).to have_content('性格分析を従業員同士で共有することができます')
+      # ログインページに遷移
+      click_on 'ログイン'
       # ログインするための入力を実行
       fill_in 'メールアドレス', with: ''
       fill_in 'パスワード', with: ''

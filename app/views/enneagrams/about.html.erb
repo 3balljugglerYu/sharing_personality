@@ -1,0 +1,23 @@
+
+<div class="about-page">
+  <div class="bar"></div>
+  <%= image_tag 'about_background.png' ,class:"background" %>
+  <div class="about">
+    <p>
+    このアプリでは、<br><br><br>
+    <span class="attention-title">性格分析を従業員同士で共有することができます<br>
+    </span><br><br>
+    従業員の性格に合わせた言葉を選ぶことができれば<br>
+    上司へのアイデアを通しやすくなったり、部下が同じミスをしなくなるかもしれません。<br>
+    そして、一人一人が意識すれば、会社全体の生産性が上がるのではないでしょうか？<br><br><br>
+    どの企業も『職場のコミュニケーションが大切』と謳っています。<br>
+    私の考える職場のコミュニケーションというのは、相手の性格を知ることだと思います。
+    </p>
+    <div class="devises-about">
+      <%= link_to "ログイン", new_user_session_path, class:'devise-about' %>
+      <%= link_to "新規登録", new_user_registration_path, class:'devise-about' %>
+    </div>
+  </div>
+
+  <div class="bar"></div>
+</div>
