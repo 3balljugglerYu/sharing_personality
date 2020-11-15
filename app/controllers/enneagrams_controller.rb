@@ -1,7 +1,7 @@
 class EnneagramsController < ApplicationController
   before_action :move_to_session, except: [:about]
   before_action :set_current_user, only: [:index, :new]
-  before_action :set_enneagram, only:[:edit, :update]
+  before_action :set_enneagram, only: [:edit, :update]
 
   def index
     return redirect_to new_enneagram_path if @enneagram_user.nil?
