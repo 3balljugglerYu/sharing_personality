@@ -118,3 +118,36 @@
 .explanation p {
   font-size: 4.7vh;
 }
+
+@media screen and (max-width: 1000px) {
+  .main{
+    background-color: rgb(255, 255, 255);
+    height: calc(100% - 60px);
+    flex-direction: column;
+  }
+  .left{
+    width: 100%;
+  }
+
+  .right{
+    display: none;
+  }
+  .session-title{
+    font-size: 3vh;
+  }
+
+  .input-session{
+    margin: 2vh 7vh;
+    font-size: 2vh;
+  }
+
+  .input-registration{
+    margin: 0 7vh 2vh 7vh;
+    font-size: 2vh;
+  }
+
+  .devise-btn{
+    margin: 2vh 7vh;
+    font-size: 2vh;
+  }
+}

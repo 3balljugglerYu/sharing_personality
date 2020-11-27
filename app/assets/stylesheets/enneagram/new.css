@@ -1,6 +1,5 @@
 
 .all{
-  width: 100vw;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -119,4 +118,139 @@
 
 .field_with_errors {
   display: contents;
+}
+
+@media screen and (max-width: 1000px) {
+  .bar{
+    height: 30px;
+  }
+
+  .title h1{
+    font-size: 53px;
+  }
+
+  .explanation-new{
+    font-size: 25px;
+  }
+
+  .start{
+    font-size: 30px;
+  }
+
+  .checks{
+    font-size: 20px;
+  }
+
+  .question{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .question p{
+    margin-left: 2px;
+    text-align: left;
+  }
+
+  .question input{
+    margin-right: 5px;
+    width: 15px;
+  }
+
+  .sum-btn button{
+    height: 47px;
+    width: 142px;
+    font-size: 17px;
+  }
+
+  .enneagram_types{
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .decision-text{
+    font-size: 20px;
+  }
+
+  .count_num{
+    width: 64px;
+  }
+
+  .type_select{
+    height: 60px;
+    width: 142px;
+    font-size: 20px;
+  }
+
+  .result-btn{
+    width: 70px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bar{
+    height: 30px;
+  }
+  .title h1{
+    font-size: 25px;
+  }
+
+  .explanation-new{
+    font-size: 14px;
+  }
+
+  .start{
+    font-size: 20px;
+  }
+
+  .checks{
+    font-size: 10px;
+  }
+
+  .question{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .question p{
+    margin-left: 2px;
+    text-align: left;
+  }
+
+  .question input{
+    margin-right: 5px;
+    width: 15px;
+  }
+
+  .sum-btn button{
+    height: 47px;
+    width: 142px;
+    font-size: 17px;
+  }
+
+  .enneagram_types{
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .decision-text{
+    font-size: 11px;
+  }
+
+  .count_num{
+    width: 64px;
+  }
+
+  .type_select{
+    height: 47px;
+    width: 142px;
+    font-size: 17px;
+  }
+
+  .result-btn{
+    width: 70px;
+    font-size: 25px;
+  }
 }

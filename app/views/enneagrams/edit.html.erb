@@ -1,12 +1,19 @@
 <div class="all">
-  <div class="bar"></div>
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <%= link_to "sharing_personality", "/" %>
+    </div>
+    <div class="top-bar-btn">
+      <p> <%= link_to "戻る", :back %> </p>
+    </div>
+  </div>
   <div class="title">
     <h1>エニアグラム再診断！</h1>
   </div>
   <div class="explanation-new">
     <p>質問数は90問、目安時間は8分程度です！<br><br>
-    大変だとは思いますが、自分の性格を知るために必要なことですので頑張ってくださね！<br><br>
-    当てはまるものだけにチェックをしてください。質問文をクリックしてもチェックされます。</p>
+    大変だとは思いますが、自分の性格を知るために<br>必要なことですので頑張ってくださね！<br><br>
+    当てはまるものだけにチェックをしてください。<br>質問文をクリックしてもチェックされます。</p>
     <div class="start">
       <p>それではスタート！</p>
     </div>
@@ -45,7 +52,7 @@
               <%= form.text_field "peacemaker_sum", class:"count_num", id:"sum_nine" ,readonly: true %> pt!
             </div>
           </div>
-          一番高いポイントがあなたのタイプです！タイプを選び、決定しくてださい。
+          <p class="decision-text">一番高いポイントがあなたのタイプです！タイプを選び、決定しくてださい。</p>
           <div class="decision">
           <%= form.collection_select(:result_id, Result.all, :id, :name, {}, {class: "type_select"}) %> <br>
           <%= form.submit "決定", class:"result-btn"%></div>
