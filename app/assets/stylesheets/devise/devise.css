@@ -10,7 +10,7 @@
 
 .main{
   background-color: rgb(255, 255, 255);
-  height: calc(100% - 10%);
+  height: calc(100% - 60px);
   display: flex;
 }
 

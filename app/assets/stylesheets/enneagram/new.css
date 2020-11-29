@@ -75,6 +75,26 @@
   cursor: pointer;
 }
 
+#result{
+  display: none;
+}
+
+#result2{
+  display: block;
+  animation: SlideIn 1.0s;
+}
+
+@keyframes SlideIn {
+  0% {
+    opacity: 0;/*初期状態では透明に*/
+    transform: translateY(64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .enneagram_types{
   font-size: 25px;
   display: flex;
@@ -86,6 +106,10 @@
 
 .enneagram_type{
   padding-bottom: 20px;
+}
+
+.enneagram_radar{
+  display: flex;
 }
 
 .count_num{

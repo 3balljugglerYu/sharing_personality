@@ -21,37 +21,38 @@
   <div class="questions">
     <%= render "question" %>
       <div class="enneagram-sum" >
-        <%= form_with model: @enneagram, class:'result',local: true do |form| %>
+        <%= form_with model: @enneagram, class:'result', id:'result',local: true do |form| %>
           <%= render 'shared/error_messages', model: form.object %>
-          <div class="enneagram_types">
-            <div class="enneagram_type">完璧主義者のポイントは
-              <%= form.text_field "perfectionist_sum", class:"count_num", id:"sum_one" ,readonly: true %> pt!
+          <canvas id="myChart" class="radar"></canvas>
+            <div class="enneagram_types">
+              <div class="enneagram_type">完璧主義者のポイントは
+                <%= form.text_field "perfectionist_sum", class:"count_num", id:"sum_one" ,readonly: true %> pt!
+              </div>
+              <div class="enneagram_type">献身家のポイントは
+                <%= form.text_field "giver_sum", class:"count_num", id:"sum_two" ,readonly: true %> pt!
+              </div>
+              <div class="enneagram_type">達成者のポイントは
+                <%= form.text_field "achiever_sum", class:"count_num", id:"sum_three" ,readonly: true %> pt!
+              </div>
+              <div class="enneagram_type">芸術家のポイントは
+                <%= form.text_field "individualist_sum", class:"count_num", id:"sum_four" ,readonly: true %> pt!
+              </div>
+              <div class="enneagram_type">研究者のポイントは
+                <%= form.text_field "investigator_sum", class:"count_num", id:"sum_five" ,readonly: true %> pt!
+              </div>
+              <div class="enneagram_type">堅実家のポイントは
+                <%= form.text_field "skeptic_sum", class:"count_num", id:"sum_six" ,readonly: true %> pt!
+              </div>
+              <div class="enneagram_type">楽天家のポイントは
+                <%= form.text_field "enthusiast_sum", class:"count_num", id:"sum_seven" ,readonly: true %> pt!
+              </div>
+              <div class="enneagram_type">統率者のポイントは
+                <%= form.text_field "challenger_sum", class:"count_num", id:"sum_eight" ,readonly: true %> pt!
+              </div>
+              <div class="enneagram_type">調停者のポイントは
+                <%= form.text_field "peacemaker_sum", class:"count_num", id:"sum_nine" ,readonly: true %> pt!
+              </div>
             </div>
-            <div class="enneagram_type">献身家のポイントは
-              <%= form.text_field "giver_sum", class:"count_num", id:"sum_two" ,readonly: true %> pt!
-            </div>
-            <div class="enneagram_type">達成者のポイントは
-              <%= form.text_field "achiever_sum", class:"count_num", id:"sum_three" ,readonly: true %> pt!
-            </div>
-            <div class="enneagram_type">芸術家のポイントは
-              <%= form.text_field "individualist_sum", class:"count_num", id:"sum_four" ,readonly: true %> pt!
-            </div>
-            <div class="enneagram_type">研究者のポイントは
-              <%= form.text_field "investigator_sum", class:"count_num", id:"sum_five" ,readonly: true %> pt!
-            </div>
-            <div class="enneagram_type">堅実家のポイントは
-              <%= form.text_field "skeptic_sum", class:"count_num", id:"sum_six" ,readonly: true %> pt!
-            </div>
-            <div class="enneagram_type">楽天家のポイントは
-              <%= form.text_field "enthusiast_sum", class:"count_num", id:"sum_seven" ,readonly: true %> pt!
-            </div>
-            <div class="enneagram_type">統率者のポイントは
-              <%= form.text_field "challenger_sum", class:"count_num", id:"sum_eight" ,readonly: true %> pt!
-            </div>
-            <div class="enneagram_type">調停者のポイントは
-              <%= form.text_field "peacemaker_sum", class:"count_num", id:"sum_nine" ,readonly: true %> pt!
-            </div>
-          </div>
           <p class="decision-text">一番高いポイントがあなたのタイプです！タイプを選び、決定しくてださい。</p>
           <div class="decision">
           <%= form.collection_select(:result_id, Result.all, :id, :name, {}, {class: "type_select"}) %> <br>
