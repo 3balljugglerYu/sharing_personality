@@ -6,6 +6,7 @@ class EnneagramsController < ApplicationController
   def index
     return redirect_to new_enneagram_path if @enneagram_user.nil?
     @enneagrams = Enneagram.all
+    gon.user_name = current_user.enneagram
   end
 
   def new

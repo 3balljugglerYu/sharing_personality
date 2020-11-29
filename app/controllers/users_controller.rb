@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @enneagrams = Enneagram.all
+    gon.user_name = @user.enneagram
   end
 
   private
