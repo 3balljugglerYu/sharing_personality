@@ -1,51 +1,85 @@
-function countCheckedCheckbox(elements, sumElement, logname) {
-  let count = 0;
-  for (let i = 0; i < elements.length; i++){
-    if (elements[i].checked){
-      count = count + 1;
-    }
-  }
+function typeCount() {
+  document.querySelector('#btn').addEventListener('click', ()=>{
+    var type1 = document.querySelectorAll('.checks_one:checked').length;
+    var type2 = document.querySelectorAll('.checks_two:checked').length;
+    var type3 = document.querySelectorAll('.checks_three:checked').length;
+    var type4 = document.querySelectorAll('.checks_four:checked').length;
+    var type5 = document.querySelectorAll('.checks_five:checked').length;
+    var type6 = document.querySelectorAll('.checks_six:checked').length;
+    var type7 = document.querySelectorAll('.checks_seven:checked').length;
+    var type8 = document.querySelectorAll('.checks_eight:checked').length;
+    var type9 = document.querySelectorAll('.checks_nine:checked').length;
 
-  console.log(`${logname}の合計は${count}です`);
-  sumElement.value = count;
+    const countSumA = document.getElementById('sum_one')
+    const countSumB = document.getElementById('sum_two')
+    const countSumC = document.getElementById('sum_three')
+    const countSumD = document.getElementById('sum_four')
+    const countSumE = document.getElementById('sum_five')
+    const countSumF = document.getElementById('sum_six')
+    const countSumG = document.getElementById('sum_seven')
+    const countSumH = document.getElementById('sum_eight')
+    const countSumI = document.getElementById('sum_nine')
 
-}
+    countSumA.value = type1
+    countSumB.value = type2
+    countSumC.value = type3
+    countSumD.value = type4
+    countSumE.value = type5
+    countSumF.value = type6
+    countSumG.value = type7
+    countSumH.value = type8
+    countSumI.value = type9
 
-function checkbox() {
+    new Chart(document.getElementById("myChart"),{
+      type: 'radar',
+      data: {
+        labels: ["完璧主義者","献身家","達成者","芸術家","研究者","堅実家","楽天家","統率者","調停者"],
+        datasets: [{
+          label: '診断結果',
+          data: [type1,type2,type3,type4,type5,type6,type7,type8,type9],
+          borderColor: "rgb(143, 73, 73)",
+          backgroundColor:"rgba(88, 25, 25, 0.253)",
+          borderWidth: 2,
+          pointStyle: "circle",
+          pointRadius: 3,
+          pointBorderWidth: 2,
+          pointBackgroundColor: "rgb(143, 73, 73)"
+        }]
+      },
+      options: {
+        responsive: true,
+        legend:{
+          position:'bottom'
+        },
+        scale: {
+          pointLabels:{
+            fontSize: 16,
+            fontColor: "rgb(129, 109, 109)"
+          },
+          ticks: {
+            min: 0,
+            max: 10,
+            stepSize: 2
+          },
+          gridLines:{
+            display: true,
+            color: "rgb(129, 109, 109)"
+          }
+        }
+      }
+    })
 
-  const checksA = document.getElementsByClassName("checks_one");
-  const checksB = document.getElementsByClassName("checks_two");
-  const checksC = document.getElementsByClassName("checks_three");
-  const checksD = document.getElementsByClassName("checks_four");
-  const checksE = document.getElementsByClassName("checks_five");
-  const checksF = document.getElementsByClassName("checks_six");
-  const checksG = document.getElementsByClassName("checks_seven");
-  const checksH = document.getElementsByClassName("checks_eight");
-  const checksI = document.getElementsByClassName("checks_nine");
-
-  const btn = document.getElementById("btn")
-  btn.addEventListener("click", () => {
-
-    const countSumA = document.getElementById("sum_one")
-    const countSumB = document.getElementById("sum_two")
-    const countSumC = document.getElementById("sum_three")
-    const countSumD = document.getElementById("sum_four")
-    const countSumE = document.getElementById("sum_five")
-    const countSumF = document.getElementById("sum_six")
-    const countSumG = document.getElementById("sum_seven")
-    const countSumH = document.getElementById("sum_eight")
-    const countSumI = document.getElementById("sum_nine")
-
-    countCheckedCheckbox(checksA, countSumA, "タイプA");
-    countCheckedCheckbox(checksB, countSumB, "タイプB");
-    countCheckedCheckbox(checksC, countSumC, "タイプC");
-    countCheckedCheckbox(checksD, countSumD, "タイプD");
-    countCheckedCheckbox(checksE, countSumE, "タイプE");
-    countCheckedCheckbox(checksF, countSumF, "タイプF");
-    countCheckedCheckbox(checksG, countSumG, "タイプG");
-    countCheckedCheckbox(checksH, countSumH, "タイプH");
-    countCheckedCheckbox(checksI, countSumI, "タイプI");
-
+    // 「診断する」ボタンを押すことで、レーダーチャートが表示されるよう設定
+    var result = document.getElementById("result")
+    result.id = "result2"
+    const end = document.getElementById('myChart')
+    end.scrollIntoView(true);
   })
+
+  // バリデーションになった場合、結果は表示されるように設定
+  var target = document.getElementById('error-alert')
+  if (target.classList.contains('error-alert') == true){
+    result.id = "result2"
+  }
 }
-window.addEventListener("load",checkbox)
+window.addEventListener("load", typeCount)
