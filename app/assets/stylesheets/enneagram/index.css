@@ -1,5 +1,5 @@
 .center{
-  height: calc(100% - 50px - 5%);
+  height: calc(100% - 30px);
   display: flex;
   overflow: scroll;
 }
@@ -65,6 +65,7 @@
   width: calc(100% - 250px);
   background-color: rgb(255, 255, 255);
   padding: 5px 20px;
+  margin-top: 50px;
   overflow-y: scroll;
 }
 
