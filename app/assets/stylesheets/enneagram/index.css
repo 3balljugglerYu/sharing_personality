@@ -110,7 +110,7 @@
 
 @media screen and (max-width: 1000px) {
   .center{
-    height: calc(100% - 80px);
+    height: calc(100% - 30px);
     display: flex;
     overflow: scroll;
   }
@@ -137,7 +137,7 @@
   }
   .open{
     position: absolute;
-    padding: 20px;
+    padding: 60px 20px;
   }
 
   .close{
@@ -169,7 +169,7 @@
 
 @media screen and (max-width: 500px) {
   .center{
-    height: calc(100% - 80px);
+    height: calc(100% - 30px);
     display: flex;
     overflow: scroll;
   }
