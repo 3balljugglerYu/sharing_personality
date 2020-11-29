@@ -65,6 +65,7 @@
   width: calc(100% - 250px);
   background-color: rgb(255, 255, 255);
   padding: 5px 20px;
+  overflow-y: scroll;
 }
 
 .main-title{
@@ -72,12 +73,12 @@
   color: rgb(85, 0, 0);
   text-align: center;
   font-size: 5vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .sub-titles{
   height: 90%;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .sub-title{

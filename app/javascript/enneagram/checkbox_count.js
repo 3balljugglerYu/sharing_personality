@@ -83,3 +83,107 @@ function typeCount() {
   }
 }
 window.addEventListener("load", typeCount)
+
+
+function indexRadarChart(){
+  new Chart(document.getElementById("indexChart"),{
+    type: 'radar',
+    data: {
+      labels: ["完璧主義者","献身家","達成者","芸術家","研究者","堅実家","楽天家","統率者","調停者"],
+      datasets: [{
+        label: '診断結果',
+        data: [
+          gon.user_name.perfectionist_sum,
+          gon.user_name.giver_sum,
+          gon.user_name.achiever_sum,
+          gon.user_name.individualist_sum,
+          gon.user_name.investigator_sum,
+          gon.user_name.skeptic_sum,
+          gon.user_name.enthusiast_sum,
+          gon.user_name.challenger_sum,
+          gon.user_name.peacemaker_sum],
+        borderColor: "rgb(143, 73, 73)",
+        backgroundColor:"rgba(88, 25, 25, 0.253)",
+        borderWidth: 2,
+        pointStyle: "circle",
+        pointRadius: 3,
+        pointBorderWidth: 2,
+        pointBackgroundColor: "rgb(143, 73, 73)"
+      }]
+    },
+    options: {
+      responsive: true,
+      legend:{
+        position:'bottom'
+      },
+      scale: {
+        pointLabels:{
+          fontSize: 16,
+          fontColor: "rgb(129, 109, 109)"
+        },
+        ticks: {
+          min: 0,
+          max: 10,
+          stepSize: 2
+        },
+        gridLines:{
+          display: true,
+          color: "rgb(129, 109, 109)"
+        }
+      }
+    }
+  })
+}
+window.addEventListener("load", indexRadarChart)
+
+
+function showRadarChart(){
+  new Chart(document.getElementById("showChart"),{
+    type: 'radar',
+    data: {
+      labels: ["完璧主義者","献身家","達成者","芸術家","研究者","堅実家","楽天家","統率者","調停者"],
+      datasets: [{
+        label: '診断結果',
+        data: [
+          gon.user_name.perfectionist_sum,
+          gon.user_name.giver_sum,
+          gon.user_name.achiever_sum,
+          gon.user_name.individualist_sum,
+          gon.user_name.investigator_sum,
+          gon.user_name.skeptic_sum,
+          gon.user_name.enthusiast_sum,
+          gon.user_name.challenger_sum,
+          gon.user_name.peacemaker_sum],
+        borderColor: "rgb(143, 73, 73)",
+        backgroundColor:"rgba(88, 25, 25, 0.253)",
+        borderWidth: 2,
+        pointStyle: "circle",
+        pointRadius: 3,
+        pointBorderWidth: 2,
+        pointBackgroundColor: "rgb(143, 73, 73)"
+      }]
+    },
+    options: {
+      responsive: true,
+      legend:{
+        position:'bottom'
+      },
+      scale: {
+        pointLabels:{
+          fontSize: 16,
+          fontColor: "rgb(129, 109, 109)"
+        },
+        ticks: {
+          min: 0,
+          max: 10,
+          stepSize: 2
+        },
+        gridLines:{
+          display: true,
+          color: "rgb(129, 109, 109)"
+        }
+      }
+    }
+  })
+}
+window.addEventListener("load", showRadarChart)
