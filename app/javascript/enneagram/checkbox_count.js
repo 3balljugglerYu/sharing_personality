@@ -112,13 +112,13 @@ function indexRadarChart(){
       }]
     },
     options: {
-      responsive: true,
+      responsive: false,
       legend:{
-        position:'bottom'
+        display: false
       },
       scale: {
         pointLabels:{
-          fontSize: 16,
+          fontSize: 13,
           fontColor: "rgb(129, 109, 109)"
         },
         ticks: {
@@ -133,6 +133,8 @@ function indexRadarChart(){
       }
     }
   })
+  var chartStyle = document.getElementById("indexChart")
+  chartStyle.removeAttribute('style');
 }
 window.addEventListener("load", indexRadarChart)
 
@@ -166,11 +168,11 @@ function showRadarChart(){
     options: {
       responsive: true,
       legend:{
-        position:'bottom'
+        display: false
       },
       scale: {
         pointLabels:{
-          fontSize: 16,
+          fontSize: 13,
           fontColor: "rgb(129, 109, 109)"
         },
         ticks: {
@@ -185,5 +187,7 @@ function showRadarChart(){
       }
     }
   })
+  var chartStyle = document.getElementById("showChart")
+  chartStyle.removeAttribute('style');
 }
 window.addEventListener("load", showRadarChart)

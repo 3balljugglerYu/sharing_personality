@@ -10,7 +10,9 @@
           <%= current_user.nickname %>さん
           (<%= current_user.enneagram.result.name %>)の性格
         </div>
-        <canvas id="indexChart"></canvas>
+        <div class="chart">
+          <canvas id="indexChart" class="index-js"></canvas>
+        </div>
         <div class="sub-titles">
           <div class="sub-title">大切にしている事</div>
           <div class="sub-explanation">
