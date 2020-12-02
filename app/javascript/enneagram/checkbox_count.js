@@ -86,7 +86,7 @@ window.addEventListener("load", typeCount)
 
 
 function indexRadarChart(){
-  new Chart(document.getElementById("indexChart"),{
+  var indexChart = new Chart(document.getElementById("indexChart"),{
     type: 'radar',
     data: {
       labels: ["完璧主義者","献身家","達成者","芸術家","研究者","堅実家","楽天家","統率者","調停者"],
@@ -118,7 +118,7 @@ function indexRadarChart(){
       },
       scale: {
         pointLabels:{
-          fontSize: 13,
+          fontSize: 8,
           fontColor: "rgb(129, 109, 109)"
         },
         ticks: {
@@ -133,6 +133,11 @@ function indexRadarChart(){
       }
     }
   })
+  if( window.matchMedia('(min-width: 1000px)').matches) {
+    indexChart.options.scale.pointLabels.fontSize = 10;
+  } else if ( window.matchMedia('(min-width: 500px)').matches) {
+    indexChart.options.scale.pointLabels.fontSize = 13;
+  };
   var chartStyle = document.getElementById("indexChart")
   chartStyle.removeAttribute('style');
 }
@@ -140,7 +145,7 @@ window.addEventListener("load", indexRadarChart)
 
 
 function showRadarChart(){
-  new Chart(document.getElementById("showChart"),{
+  var showChart = new Chart(document.getElementById("showChart"),{
     type: 'radar',
     data: {
       labels: ["完璧主義者","献身家","達成者","芸術家","研究者","堅実家","楽天家","統率者","調停者"],
@@ -172,7 +177,7 @@ function showRadarChart(){
       },
       scale: {
         pointLabels:{
-          fontSize: 13,
+          fontSize: 8,
           fontColor: "rgb(129, 109, 109)"
         },
         ticks: {
@@ -187,6 +192,11 @@ function showRadarChart(){
       }
     }
   })
+  if( window.matchMedia('(min-width: 1000px)').matches) {
+    showChart.options.scale.pointLabels.fontSize = 10;
+  } else if ( window.matchMedia('(min-width: 500px)').matches) {
+    showChart.options.scale.pointLabels.fontSize = 13;
+  };
   var chartStyle = document.getElementById("showChart")
   chartStyle.removeAttribute('style');
 }
