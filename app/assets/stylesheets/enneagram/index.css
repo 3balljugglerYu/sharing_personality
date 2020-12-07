@@ -5,17 +5,20 @@
 }
 .side{
   width: 250px;
-  background-color: rgb(255, 255, 255);
+  /* background: linear-gradient(to bottom right, rgba(255, 238, 0, 0.24), rgba(255, 0, 200, 0.308));; */
   text-align: center;
+  border-right: solid 5px rgba(0, 238, 255, 0.123);
 }
 .side-tops{
   text-decoration: none;
-  color: rgb(139, 27, 27);
+  color: #000000;
 }
 
 .side-top{
   height: 200px;
-  border: solid 2px rgb(211, 178, 178);
+  /* border-right: linear-gradient(rgb(0, 110, 255), rgb(111, 0, 255)) solid 5px ; */
+  border-bottom: solid 5px rgba(0, 238, 255, 0.123);
+
   margin-top: 50px;
 }
 
@@ -35,36 +38,40 @@
 }
 
 .index-logout{
-  color: rgb(139, 27, 27);
+  color: #000000;
 }
 .user-title{
   width: 100%;
   text-align: center;
-  background-color: rgb(248, 239, 239);
+  background-color: #e2e7fa;
+  color: #0003b0;
 }
 
 .users-info{
   padding: 10px 0;
-  color: rgb(179, 45, 45);
+  color: #ff0022
 }
 
 .user-info{
   text-decoration: none;
-  color: rgb(179, 45, 45);
+  color: #0011ff
 }
 .side-bottom{
-  height: calc(100% - 200px);
+  height: calc(100% - 250px);
   padding: 15px 20px;
   display: flex;
   flex-direction: column;
   align-items: end;
-  border: solid 2px rgb(211, 178, 178);
+  /* border-right: solid 5px rgba(204, 0, 119, 0.137); */
   overflow: scroll;
 }
 
 .main-right{
   width: calc(100% - 250px);
-  background-color: rgb(255, 255, 255);
+  background-image: linear-gradient(rgb(255, 255, 255) 80%, rgb(255, 0, 200) 90%);
+  background-image: radial-gradient(
+    circle at 100px 200px, rgb(255, 255, 255) 0% 80%, rgba(0, 247, 255, 0.233) 90% 100%
+  );
   padding: 5px 20px;
   margin-top: 50px;
   overflow-y: scroll;
@@ -72,7 +79,7 @@
 
 .main-title{
   height: 10%;
-  color: rgb(85, 0, 0);
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 5vh;
   /* overflow: hidden; */
@@ -95,7 +102,7 @@
 
 .sub-title{
   color: rgb(122, 92, 92);
-  border-bottom: solid 2px rgb(211, 178, 178);
+  border-bottom: solid 2px rgb(0, 0, 0);
   font-size: 3vh;
   overflow: hidden;
   text-align: left;

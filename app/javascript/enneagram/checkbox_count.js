@@ -30,6 +30,7 @@ function typeCount() {
     countSumH.value = type8
     countSumI.value = type9
 
+    // 診断結果のレーダーチャートを出力
     new Chart(document.getElementById("myChart"),{
       type: 'radar',
       data: {
@@ -37,13 +38,13 @@ function typeCount() {
         datasets: [{
           label: '診断結果',
           data: [type1,type2,type3,type4,type5,type6,type7,type8,type9],
-          borderColor: "rgb(143, 73, 73)",
-          backgroundColor:"rgba(88, 25, 25, 0.253)",
+          borderColor: "#ff0000",
+          backgroundColor:"#ff00006c",
           borderWidth: 2,
           pointStyle: "circle",
           pointRadius: 3,
           pointBorderWidth: 2,
-          pointBackgroundColor: "rgb(143, 73, 73)"
+          pointBackgroundColor: "#ff0000"
         }]
       },
       options: {
@@ -54,7 +55,7 @@ function typeCount() {
         scale: {
           pointLabels:{
             fontSize: 16,
-            fontColor: "rgb(129, 109, 109)"
+            fontColor: "#000000"
           },
           ticks: {
             min: 0,
@@ -63,7 +64,7 @@ function typeCount() {
           },
           gridLines:{
             display: true,
-            color: "rgb(129, 109, 109)"
+            color: "#000000"
           }
         }
       }
@@ -84,7 +85,7 @@ function typeCount() {
 }
 window.addEventListener("load", typeCount)
 
-
+// 自身のレーダーチャート
 function indexRadarChart(){
   var indexChart = new Chart(document.getElementById("indexChart"),{
     type: 'radar',
@@ -102,13 +103,13 @@ function indexRadarChart(){
           gon.user_name.enthusiast_sum,
           gon.user_name.challenger_sum,
           gon.user_name.peacemaker_sum],
-        borderColor: "rgb(143, 73, 73)",
-        backgroundColor:"rgba(88, 25, 25, 0.253)",
+        borderColor: "rgba(68, 0, 255, 0.566)",
+        backgroundColor:"rgba(0, 255, 255, 0.1)",
         borderWidth: 2,
         pointStyle: "circle",
         pointRadius: 3,
         pointBorderWidth: 2,
-        pointBackgroundColor: "rgb(143, 73, 73)"
+        pointBackgroundColor: "rgb(0, 0, 255)"
       }]
     },
     options: {
@@ -119,7 +120,7 @@ function indexRadarChart(){
       scale: {
         pointLabels:{
           fontSize: 8,
-          fontColor: "rgb(129, 109, 109)"
+          fontColor: "rgb(71, 0, 165)"
         },
         ticks: {
           min: 0,
@@ -128,7 +129,7 @@ function indexRadarChart(){
         },
         gridLines:{
           display: true,
-          color: "rgb(129, 109, 109)"
+          color: "rgba(71, 0, 165, 0.114)"
         }
       }
     }
@@ -144,6 +145,7 @@ function indexRadarChart(){
 window.addEventListener("load", indexRadarChart)
 
 
+// 各ユーザーのレーダーチャート
 function showRadarChart(){
   var showChart = new Chart(document.getElementById("showChart"),{
     type: 'radar',
@@ -161,13 +163,13 @@ function showRadarChart(){
           gon.user_name.enthusiast_sum,
           gon.user_name.challenger_sum,
           gon.user_name.peacemaker_sum],
-        borderColor: "rgb(143, 73, 73)",
-        backgroundColor:"rgba(88, 25, 25, 0.253)",
+        borderColor: "#ff0000",
+        backgroundColor:"#ff00006c",
         borderWidth: 2,
         pointStyle: "circle",
         pointRadius: 3,
         pointBorderWidth: 2,
-        pointBackgroundColor: "rgb(143, 73, 73)"
+        pointBackgroundColor: "#ff0000"
       }]
     },
     options: {
@@ -178,7 +180,7 @@ function showRadarChart(){
       scale: {
         pointLabels:{
           fontSize: 8,
-          fontColor: "rgb(129, 109, 109)"
+          fontColor: "#000000"
         },
         ticks: {
           min: 0,
@@ -187,7 +189,7 @@ function showRadarChart(){
         },
         gridLines:{
           display: true,
-          color: "rgb(129, 109, 109)"
+          color: "#000000"
         }
       }
     }
