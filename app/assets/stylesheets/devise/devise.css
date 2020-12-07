@@ -5,7 +5,7 @@
 
 .bar{
   height: 30px;
-  background-color: rgb(62, 62, 62);
+  background-image: linear-gradient(rgb(0, 110, 255), rgb(111, 0, 255));
   }
 
 .main{

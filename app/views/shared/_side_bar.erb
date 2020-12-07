@@ -20,8 +20,10 @@
     </div>
     <% @enneagrams.where.not(user_id: current_user.id).each do |enneagram| %>
       <div class="users-info">
-        <%= link_to enneagram.user.nickname , user_path(enneagram.user.id), class:"user-info" %>
-        (<%= link_to enneagram.result.name , user_path(enneagram.user.id), class:"user-info" %>)
+        <%= link_to user_path(enneagram.user.id), class:"user-info" do %>
+          <%= enneagram.user.nickname %>
+          (<%= enneagram.result.name %>)
+        <% end %>
       </div>
     <% end %>
   </div>

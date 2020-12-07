@@ -1,7 +1,7 @@
 .top-bar{
   display: flex;
   height: 50px;
-  background-color: rgb(62, 62, 62);
+  background-image: linear-gradient(rgb(0, 110, 255), rgb(111, 0, 255));;
   position: fixed;
   width: 100%;
 }
