@@ -38,13 +38,13 @@ function typeCount() {
         datasets: [{
           label: '診断結果',
           data: [type1,type2,type3,type4,type5,type6,type7,type8,type9],
-          borderColor: "#ff0000",
-          backgroundColor:"#ff00006c",
+          borderColor: "rgba(68, 0, 255, 0.566)",
+          backgroundColor:"rgba(0, 255, 255, 0.1)",
           borderWidth: 2,
           pointStyle: "circle",
           pointRadius: 3,
           pointBorderWidth: 2,
-          pointBackgroundColor: "#ff0000"
+          pointBackgroundColor: "rgb(0, 0, 255)"
         }]
       },
       options: {
@@ -94,15 +94,15 @@ function indexRadarChart(){
       datasets: [{
         label: '診断結果',
         data: [
-          gon.user_name.perfectionist_sum,
-          gon.user_name.giver_sum,
-          gon.user_name.achiever_sum,
-          gon.user_name.individualist_sum,
-          gon.user_name.investigator_sum,
-          gon.user_name.skeptic_sum,
-          gon.user_name.enthusiast_sum,
-          gon.user_name.challenger_sum,
-          gon.user_name.peacemaker_sum],
+          gon.current_user.perfectionist_sum,
+          gon.current_user.giver_sum,
+          gon.current_user.achiever_sum,
+          gon.current_user.individualist_sum,
+          gon.current_user.investigator_sum,
+          gon.current_user.skeptic_sum,
+          gon.current_user.enthusiast_sum,
+          gon.current_user.challenger_sum,
+          gon.current_user.peacemaker_sum],
         borderColor: "rgba(68, 0, 255, 0.566)",
         backgroundColor:"rgba(0, 255, 255, 0.1)",
         borderWidth: 2,
@@ -110,10 +110,11 @@ function indexRadarChart(){
         pointRadius: 3,
         pointBorderWidth: 2,
         pointBackgroundColor: "rgb(0, 0, 255)"
-      }]
+      }
+    ]
     },
     options: {
-      responsive: false,
+      responsive: true,
       legend:{
         display: false
       },
@@ -135,7 +136,7 @@ function indexRadarChart(){
     }
   })
   if( window.matchMedia('(min-width: 1000px)').matches) {
-    indexChart.options.scale.pointLabels.fontSize = 10;
+    indexChart.options.scale.pointLabels.fontSize = 15;
   } else if ( window.matchMedia('(min-width: 500px)').matches) {
     indexChart.options.scale.pointLabels.fontSize = 13;
   };
@@ -180,7 +181,7 @@ function showRadarChart(){
       scale: {
         pointLabels:{
           fontSize: 8,
-          fontColor: "#000000"
+          fontColor: "rgb(71, 0, 165)"
         },
         ticks: {
           min: 0,
@@ -189,13 +190,13 @@ function showRadarChart(){
         },
         gridLines:{
           display: true,
-          color: "#000000"
+          color: "rgba(71, 0, 165, 0.114)"
         }
       }
     }
   })
   if( window.matchMedia('(min-width: 1000px)').matches) {
-    showChart.options.scale.pointLabels.fontSize = 10;
+    showChart.options.scale.pointLabels.fontSize = 15;
   } else if ( window.matchMedia('(min-width: 500px)').matches) {
     showChart.options.scale.pointLabels.fontSize = 13;
   };
