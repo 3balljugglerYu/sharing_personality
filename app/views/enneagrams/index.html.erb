@@ -10,8 +10,16 @@
           <%= current_user.nickname %>さん
           (<%= current_user.enneagram.result.name %>)の性格
         </div>
-        <div class="chart">
-          <canvas id="indexChart" class="index-js"></canvas>
+        <div class="chart-entire">
+          <div class="chart">
+            <canvas id="indexChart" class="index-js"></canvas>
+          </div>
+          <div class="lists" id="lists">リスト</div>
+          <ul class="show-lists hidden" id="pull-down">
+            <% @enneagrams.where.not(user_id: current_user.id).each do |enneagram| %>
+              <li class="pull-down-list" data-id="<%= enneagram.user.id%>"><%= enneagram.user.nickname %> </li>
+            <% end %>
+          </ul>
         </div>
         <div class="sub-titles">
           <div class="sub-title">大切にしている事</div>

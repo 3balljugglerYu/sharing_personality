@@ -2,11 +2,14 @@ class EnneagramsController < ApplicationController
   before_action :move_to_session, except: [:about]
   before_action :set_current_user, only: [:index, :new]
   before_action :set_enneagram, only: [:edit, :update]
+  # postの無効化を無効化するメソッド
+  protect_from_forgery except: [:fetch_user]
 
   def index
     return redirect_to new_enneagram_path if @enneagram_user.nil?
     @enneagrams = Enneagram.all
-    gon.user_name = current_user.enneagram
+    gon.current_user = current_user.enneagram
+
   end
 
   def new
@@ -36,6 +39,11 @@ class EnneagramsController < ApplicationController
 
   def about
     @user = User.new
+  end
+
+  def fetch_user
+    enneagram_user = Enneagram.find_by(user_id: params[:user_id])
+    render json: enneagram_user
   end
 
   private

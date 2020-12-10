@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :enneagrams, only: [:index, :new, :create, :edit, :update]
   resources :users, only: [:show]
   get "enneagrams/about" => "enneagrams#about"
+  post "/fetch_user" => "enneagrams#fetch_user"
 end

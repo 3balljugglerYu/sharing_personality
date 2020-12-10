@@ -54,7 +54,7 @@
 
 .user-info{
   text-decoration: none;
-  color: #0011ff
+  color: #000dc9;
 }
 .side-bottom{
   height: calc(100% - 250px);
@@ -94,6 +94,42 @@
   object-fit: cover;
   width: 900px;
   height: 650px;
+}
+
+.chart-entire{
+  position: relative;
+}
+
+.lists{
+  position: absolute;
+  font-size: 20px;
+  top: 20px;
+  left: 20px;
+  background-color: rgb(0, 183, 255);
+  color: rgb(255, 255, 255);
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.pull-down-list{
+  border: 1px solid #eee;
+}
+
+.show-lists{
+  position: absolute;
+  font-size: 20px;
+  top: 70px;
+  left: 20px;
+  background-color: rgb(0, 183, 255);
+  color: rgb(255, 255, 255);
+  width: 100px;
+  text-align: center;
+}
+
+.hidden{
+  display: none;
 }
 
 .sub-titles{
@@ -211,6 +247,7 @@
   .main-right{
     width: 100%;
   }
+
   .main-title{
     font-size: 20px;
     padding-top: 5px;
@@ -229,4 +266,18 @@
     width: 100%;
     height: 230px;
   }
+
+.lists{
+  font-size: 10px;
+  width: 50px;
+  height: 20px;
+  padding-top: 3px;
+}
+
+.show-lists{
+  font-size: 10px;
+  top: 40px;
+  left: 20px;
+  width: 50px;
+}
 }
