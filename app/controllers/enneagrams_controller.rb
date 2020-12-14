@@ -7,13 +7,14 @@ class EnneagramsController < ApplicationController
 
   def index
     return redirect_to new_enneagram_path if @enneagram_user.nil?
+
     @enneagrams = Enneagram.all
     gon.current_user = current_user.enneagram
-
   end
 
   def new
     return redirect_to root_path unless @enneagram_user.nil?
+
     @enneagram = Enneagram.new
   end
 
