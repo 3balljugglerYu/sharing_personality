@@ -1,7 +1,7 @@
 <div class="entire">
   <%= render "shared/header"%>
     <div class="center">
-      <input id="menu" type="checkbox" class="hide-checkbox">
+      <input id="menu" type="checkbox" class="hide-checkbox" ,onclick="checkbox">
       <label for="menu" class="open"><i class="fa fa-caret-right fa-3x" aria-hidden="true"></i></label>
       <label for="menu" class="back"></label>
     <%= render "shared/side_bar"%>
@@ -10,7 +10,7 @@
           <%= current_user.nickname %>さん
           (<%= current_user.enneagram.result.name %>)の性格
         </div>
-        <div class="chart-entire">
+        <div class="chart-entire" id="chart-entire">
           <div class="chart">
             <canvas id="indexChart" class="index-js"></canvas>
           </div>

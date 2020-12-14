@@ -163,6 +163,10 @@
 }
 
 @media screen and (max-width: 1000px) {
+  #chart-entire2{
+    display: none;
+  }
+
   .side-top{
     margin-top: 0;
   }
