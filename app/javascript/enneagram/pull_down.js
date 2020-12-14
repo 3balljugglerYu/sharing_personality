@@ -26,7 +26,6 @@ function pulldown(){
       value = list.getAttribute("data-id");
       if (current_user === value){
         current_user = 0;
-
         var indexChart = new Chart(document.getElementById("indexChart"),{
           type: 'radar',
           data: {
@@ -50,8 +49,7 @@ function pulldown(){
               pointRadius: 3,
               pointBorderWidth: 2,
               pointBackgroundColor: "rgb(0, 0, 255)"
-            }
-          ]
+            }]
           },
           options: {
             responsive: true,
@@ -84,61 +82,52 @@ function pulldown(){
         chartStyle.removeAttribute('style');
       } else {
         current_user = value;
-      // fetchという関数がある。Ajax通信を行うことができるようになる。コントローラに贈られるデータが。
-      fetch("/fetch_user", {
-        method: "POST",
-        // headersでどういったデータを送るのかを設定する。
-        headers: {
-          "Content-Type":"application/json"
-        },
-        // bodyでデータを送る
-        body: JSON.stringify({
-          // user_idのデータを送る。コントローラに贈られる。
-          user_id:value
-        })
-        // コントローラから送られてきたJsonをresponseで取得
-      }).then((response)=>{
-        // .jsonにすることで、javascriptで使えるようになる。
-        return response.json();
-        // response.jsonがresultに格納される
-      }).then((result)=>{
-        // alert(result.perfectionist_sum);
-        var indexChart = new Chart(document.getElementById("indexChart"),{
-          type: 'radar',
-          data: {
-            labels: ["完璧主義者","献身家","達成者","芸術家","研究者","堅実家","楽天家","統率者","調停者"],
-            datasets: [{
-              label: '診断結果',
-              data: [
-                gon.current_user.perfectionist_sum,
-                gon.current_user.giver_sum,
-                gon.current_user.achiever_sum,
-                gon.current_user.individualist_sum,
-                gon.current_user.investigator_sum,
-                gon.current_user.skeptic_sum,
-                gon.current_user.enthusiast_sum,
-                gon.current_user.challenger_sum,
-                gon.current_user.peacemaker_sum],
-              borderColor: "rgba(68, 0, 255, 0.566)",
-              backgroundColor:"rgba(0, 255, 255, 0.1)",
-              borderWidth: 2,
-              pointStyle: "circle",
-              pointRadius: 3,
-              pointBorderWidth: 2,
-              pointBackgroundColor: "rgb(0, 0, 255)"
-            },
-            {
-              label: '診断結果',
-              data: [
-                result.perfectionist_sum,
-                result.giver_sum,
-                result.achiever_sum,
-                result.individualist_sum,
-                result.investigator_sum,
-                result.skeptic_sum,
-                result.enthusiast_sum,
-                result.challenger_sum,
-                result.peacemaker_sum],
+        fetch("/fetch_user", {
+          method: "POST",
+          headers: {
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify({
+            user_id:value
+          })
+        }).then((response)=>{
+          return response.json();
+        }).then((result)=>{
+          var indexChart = new Chart(document.getElementById("indexChart"),{
+            type: 'radar',
+            data: {
+              labels: ["完璧主義者","献身家","達成者","芸術家","研究者","堅実家","楽天家","統率者","調停者"],
+              datasets: [{
+                label: '診断結果',
+                data: [
+                  gon.current_user.perfectionist_sum,
+                  gon.current_user.giver_sum,
+                  gon.current_user.achiever_sum,
+                  gon.current_user.individualist_sum,
+                  gon.current_user.investigator_sum,
+                  gon.current_user.skeptic_sum,
+                  gon.current_user.enthusiast_sum,
+                  gon.current_user.challenger_sum,
+                  gon.current_user.peacemaker_sum],
+                borderColor: "rgba(68, 0, 255, 0.566)",
+                backgroundColor:"rgba(0, 255, 255, 0.1)",
+                borderWidth: 2,
+                pointStyle: "circle",
+                pointRadius: 3,
+                pointBorderWidth: 2,
+                pointBackgroundColor: "rgb(0, 0, 255)"
+              },{
+                label: '診断結果',
+                data: [
+                  result.perfectionist_sum,
+                  result.giver_sum,
+                  result.achiever_sum,
+                  result.individualist_sum,
+                  result.investigator_sum,
+                  result.skeptic_sum,
+                  result.enthusiast_sum,
+                  result.challenger_sum,
+                  result.peacemaker_sum],
                 borderColor: "#ff0000",
                 backgroundColor:"#ff00006c",
                 borderWidth: 2,
@@ -146,15 +135,14 @@ function pulldown(){
                 pointRadius: 3,
                 pointBorderWidth: 2,
                 pointBackgroundColor: "#ff0000"
-            }
-          ]
-          },
-          options: {
+              }]
+            },
+            options: {
             responsive: true,
             legend:{
               display: false
             },
-            scale: {
+            scale:{
               pointLabels:{
                 fontSize: 8,
                 fontColor: "rgb(71, 0, 165)"
