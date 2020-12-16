@@ -1,24 +1,38 @@
-
 <div class="about-page">
-  <div class="bar"></div>
-  <%= image_tag 'about_background.png' ,class:"background" %>
+  <div class="about-top-bar"></div>
+  <div class="slide-bar">
+    <div class="slide-bar1"></div>
+    <div class="slide-bar1-1"></div>
+  </div>
+  <div class="slide-bar">
+    <div class="slide-bar2"></div>
+    <div class="slide-bar2-1"></div>
+    <p class="title-appear">SharingPersonality</p>
+    <p class="title-slide">SharingPersonality</p>
+    <p class="title-shift">SharingPersonality</p>
+  </div>
+  <div class="slide-bar">
+    <div class="slide-bar3"></div>
+    <div class="slide-bar3-1"></div>
+  </div>
+  <div class="slide-bar">
+    <div class="slide-bar4"></div>
+    <div class="slide-bar4-1"></div>
+  </div>
+  <%= image_tag 'about_background.png' ,class:"image-background" %>
   <div class="about">
-    <p>
-    このアプリでは、<br><br><br>
-    <span class="attention-title">性格分析を従業員同士で共有することができます<br>
-    </span><br><br>
-    従業員の性格に合わせた言葉を選ぶことができれば<br>
-    上司へのアイデアを通しやすくなったり、部下が同じミスをしなくなるかもしれません。<br>
-    そして、一人一人が意識すれば、会社全体の生産性が上がるのではないでしょうか？<br><br><br>
-    多くの企業は『職場でのコミュニケーション』を大切しています。<br>
-    このアプリで得た知識を職場での会話に少しずつ取り入れ、<br>
-    相手の心を動かす会話を身につけていきましょう。
-    </p>
+    <div class="exp-1">このアプリでは、</div>
+    <div class="exp-2">性格分析を従業員同士で共有することができます</div>
+    <div class="exp-3">従業員の性格に合わせた言葉を選ぶことができれば</div>
+    <div class="exp-4">上司へのアイデアを通しやすくなったり、</div>
+    <div class="exp-5">部下が同じミスをしなくなるかもしれません。</div>
+    <div class="exp-6">多くの企業は『職場でのコミュニケーション』を大切しています。</div>
+    <div class="exp-7">このアプリで得た知識を職場での会話に少しずつ取り入れ、</div>
+    <div class="exp-8">相手の心を動かす会話を身につけていきましょう。</div>
     <div class="devises-about">
       <%= link_to "ログイン", new_user_session_path, class:'devise-about' %>
       <%= link_to "新規登録", new_user_registration_path, class:'devise-about' %>
     </div>
   </div>
-
-  <div class="bar"></div>
+  <div class="about-bottom-bar"></div>
 </div>
