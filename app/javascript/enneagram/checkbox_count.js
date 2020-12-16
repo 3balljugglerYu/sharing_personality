@@ -104,7 +104,7 @@ function indexRadarChart(){
           gon.current_user.challenger_sum,
           gon.current_user.peacemaker_sum],
         borderColor: "rgba(68, 0, 255, 0.566)",
-        backgroundColor:"rgba(0, 255, 255, 0.1)",
+        backgroundColor:"rgba(0, 255, 255, 0.4)",
         borderWidth: 2,
         pointStyle: "circle",
         pointRadius: 3,
